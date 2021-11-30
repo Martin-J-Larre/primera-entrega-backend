@@ -35,13 +35,11 @@ function serverProductsRoutes(app) {
         }
     })
 
-    // Mistake here
-    // Trato de ingresar por postman por body pero solo me imprime "timestamp y el id del método"
-    
+    // this is ok
     router.post('/', (req, res) => {
         if (admin) {
             const timestamp = moment().format('DD/MM/YYYY hh:mm:ss a');
-            const product = {timestamp, ...req.body}; //Look up the problem here
+            const product = {timestamp, ...req.body};
             const savedProduct = productos.save(product);
             savedProduct.then(response => res.json(response)).catch(err => console.log("Error en router.post()", err));
         } else {
@@ -49,7 +47,6 @@ function serverProductsRoutes(app) {
         }
     })
 
-    // Mismo problema acá no me deja ingresar el body por postman 
     router.put('/:id', (req, res) => {
         if (admin) {
             const {id} = req.params;

@@ -34,8 +34,8 @@ function serverCartRoutes(app) {
         }).catch(err => console.log("Error router.delete()*cart", err));
     })
     
-    // it is wrong
-    router.get('/:id/products', (req, res) => {
+    // it is ok
+    router.get('/:id/productos', (req, res) => {
         const {id} = req.params;
         const product = cart.getById(id);
         product.then(response => {
@@ -49,10 +49,10 @@ function serverCartRoutes(app) {
         }).catch(err => console.log("Error router.get()*cart", err));
     })
 
-    //Post2 // it is wrong
+    // it is ok
     router.post('/:id/productos', (req, res) => {
-        const {id} = req.params;
-        const {idProduct} = req.body;
+        const {id} = req.params; //id carrito
+        const {idProduct} = req.body; //id product
         const product = productos.getById(idProduct);
         product.then(productResponse => {
             if (productResponse) {
@@ -72,7 +72,8 @@ function serverCartRoutes(app) {
         }).catch(err => console.log("Error router.post2()*cart", err));
     })
 
-    // it is not ready for check yet
+    // Elimina el productos y el carrito no
+    // IT is ok
     router.delete('/:id/productos/:id_prod', (req, res) => {
         const {id, id_prod} = req.params;
         const productId = cart.getById(id);

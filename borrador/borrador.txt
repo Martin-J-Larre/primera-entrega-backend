@@ -1,26 +1,3 @@
-
-JSON.productos
-id, timestamp, nombre, descripcion, código, foto (url), precio, stock.
-
-[
-  {
-    "timestamp": "29/11/2021 04:05:04 am",
-    "name": "product1",
-    "description": " lorem lorem",
-    "code": "120320",
-    "thumbnail": "https://cdn4.iconfinder.com/data/icons/zoo-line-welcome-to-zootopia/512/parrot-256.png",
-    "price": "12",
-    "stock": "22",
-    "id": 1
-  }
-]
-
-JSON.cart
-id, timestamp(carrito), productos: { id, timestamp(producto), nombre, descripcion, código, foto (url), precio, stock }
-[
-  {
-    "timestamp":"16/11/2021 09:24:33 pm",
-    "products":[],
-    "id":1
-  }
-]
+{
+    "idProduct": 1
+}
